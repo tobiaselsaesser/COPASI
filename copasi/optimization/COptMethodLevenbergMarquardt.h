@@ -110,6 +110,14 @@ private:
    */
   void hessian();
 
+  void tanC();
+  void getBoundarys();
+  C_FLOAT64 atanC(C_FLOAT64, int i);
+  C_FLOAT64 atanValue;
+  std::vector< C_FLOAT64 > upper;
+  std::vector< C_FLOAT64 > lower;
+  std::vector< C_FLOAT64 > range;
+
   // Attributes
 private:
 
@@ -152,6 +160,7 @@ private:
    * The current solution guess
    */
   CVector< C_FLOAT64 > mCurrent;
+ 
 
   /**
    * The last individual
@@ -215,6 +224,8 @@ private:
    * The transpose jacobian of the residuals.
    */
   CMatrix< C_FLOAT64 > mResidualJacobianT;
+
+  
 };
 
 #endif  // COPASI_COptMethodLevenbergMarquardt
